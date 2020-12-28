@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: url('./pexels-jahoo-clouseau-388415.jpg') no-repeat;
+
+    background-size: cover;
+    background-position: center bottom;
+    overflow: hidden;
+}
+
+.container{
+    perspective: 100px;
+    perspective-origin: center;
+}
+
+.runway{
+    width: 170px;
+    height: 960px;
+    background-color: black;
+    margin: 30px auto;
+    box-shadow: 5px 0px 0px #383838,
+    -5px 0px 0px #383838;
+    position: relative;
+    transform: rotateX(75deg);
+}
+
+.runway::after{
+    content: "";
+position: absolute;
+left: 50%;
+height: 100%;
+width: 5px;
+background-color: #fff;
+transform: translateX(70px);
+}
+
+.runway::before{
+    content: "";
+position: absolute;
+left: 50%;
+height: 100%;
+width: 5px;
+background-color: #fff;
+transform: translateX(-70px);
+}
+.runway span{
+    display: block;
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    /* width: 5px; */
+    border: 4px dashed white;
+}
+
+.plane
+{
+    width: 570px;
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(0.3);
+    animation: takeoff 16s linear  forwards;
+}
+
+@keyframes takeoff{
+    0%{
+        transform: translateY(5px) scale(0.3);
+    }
+
+    25%{
+        transform: translateY(50px) scale(0.4);
+    }
+    50%{
+        transform: translateZ(80px) scale(0.8) rotateZ(5deg);
+    }
+    70%{
+        transform: translateZ(90px) scale(0.8) rotateZ( 10deg);
+    }
+    90%{
+        transform: translateZ(100px) scale(0.9)  rotateZ(20deg);
+
+    }
+    100%{
+        transform: translateZ(200px) scale(1);
+
+    }
+}
